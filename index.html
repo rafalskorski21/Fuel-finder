@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#0b0d0f">
+<link rel="manifest" href="manifest.json">
+<link rel="stylesheet" href="style.css">
+<title>Fuel Finder</title>
+</head>
+<body>
+<header>
+  <div class="brand"><span class="logo">⛽</span><div><strong>Fuel Finder</strong><small>Find fuel. Spend less.</small></div></div>
+  <button id="locate" class="icon">⌖</button>
+</header>
+
+<main>
+<section class="hero">
+  <p class="eyebrow">NEAR YOU</p>
+  <h1>Find the cheapest fuel.</h1>
+  <p class="muted" id="locationText">Use your location to compare nearby stations.</p>
+  <button id="findBtn" class="primary">Find cheapest fuel</button>
+</section>
+
+<section class="panel">
+  <div class="row"><h2>Fuel type</h2><button id="vehicleBtn" class="ghost">🚗 My vehicle</button></div>
+  <div class="chips">
+    <button class="chip active" data-fuel="E10">E10</button>
+    <button class="chip" data-fuel="E5">E5</button>
+    <button class="chip" data-fuel="B7">Diesel</button>
+    <button class="chip" data-fuel="Premium">Premium</button>
+  </div>
+</section>
+
+<section class="panel">
+  <div class="row"><h2>Along my route</h2><span class="tag">SMART</span></div>
+  <div class="route"><input id="destination" placeholder="Where are you going?"><button id="routeBtn">Go</button></div>
+  <p class="muted">We’ll account for the detour and fuel your car uses to get there.</p>
+</section>
+
+<section id="results" class="results hidden">
+  <div class="row"><h2>Best value</h2><button id="refresh" class="ghost">↻ Refresh</button></div>
+  <div id="cards"></div>
+</section>
+
+<section id="vehiclePanel" class="panel hidden">
+  <div class="row"><h2>Your vehicle</h2><button id="closeVehicle" class="ghost">Done</button></div>
+  <label>Number plate</label>
+  <div class="route"><input id="plate" placeholder="AB12 CDE" autocapitalize="characters"><button id="lookup">Lookup</button></div>
+  <div id="vehicleResult" class="vehicleResult">Your vehicle details will appear here.</div>
+  <div class="grid2">
+    <label>Tank size (L)<input id="tank" type="number" value="50"></label>
+    <label>Real MPG<input id="mpg" type="number" value="45"></label>
+  </div>
+  <p class="muted">For now, these values can be entered manually. DVLA lookup will be connected through the secure backend in the production build.</p>
+</section>
+</main>
+
+<nav>
+ <button class="navactive">⌂<span>Home</span></button>
+ <button id="navMap">◉<span>Map</span></button>
+ <button id="navVehicle">🚗<span>Vehicle</span></button>
+</nav>
+<script src="app.js"></script>
+</body>
+</html>
