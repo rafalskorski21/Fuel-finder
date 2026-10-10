@@ -84,7 +84,7 @@ async function loadStations(routeMode = false) {
           <div class="meta">Fuel to reach station: ${s.driveLitres.toFixed(2)}L • approx. ${money(s.driveCost)}</div>
           <div class="meta"><strong>Effective total: ${money(s.effectiveCost)}</strong></div>
           <div class="meta">${updateText(s)}</div>
-          ${badges?`<div class="saving-row">${badges}</div>`:""}
+          ${badges?`<div class="saving-row" style="display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-top:8px;">${badges}</div>`:""}
           ${!isBest?`<div class="meta">${money(Math.max(0,s.effectiveCost-bestValue.effectiveCost))} more than the best-value option (estimate)</div>`:""}
           <button onclick="window.open('https://maps.apple.com/?daddr=${encodeURIComponent(destination)}','_blank')">Directions</button>
         </article>`;
